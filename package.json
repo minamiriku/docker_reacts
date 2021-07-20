@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "react-syntax-highlighter": "^15.4.3"
+  },
+  "devDependencies": {
+    "@types/react-syntax-highlighter": "^13.5.2"
+  }
+}

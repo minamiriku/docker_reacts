@@ -7,15 +7,16 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Link from "@material-ui/core/Link";
-import logo from "../../images/logo.svg";
+import Logo from "images/logo.svg";
+import { COLOR_DEFINITIONS } from "utils/color";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
-      color: "#61dafb",
-      backgroundColor: "#282c34",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
+      backgroundColor: COLOR_DEFINITIONS.MAIN.SECONDARY,
       transition: theme.transitions.create(["margin", "width"], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -23,8 +24,8 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "64px",
     },
     appBarShift: {
-      color: "#61dafb",
-      backgroundColor: "#282c34",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
+      backgroundColor: COLOR_DEFINITIONS.MAIN.SECONDARY,
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
       transition: theme.transitions.create(["margin", "width"], {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "none",
     },
     link: {
-      color: "#61dafb",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
       width: "100%",
     },
     headerLogo: {
@@ -77,7 +78,7 @@ const Header: React.FC<HeaderType> = ({ open, handleDrawerOpen }) => {
         <Typography variant="h6" noWrap>
           <Link href="/top" underline="none" className={classes.link}>
             React
-            <img src={logo} alt="react" className={classes.headerLogo} />
+            <img src={Logo} alt="react" className={classes.headerLogo} />
           </Link>
         </Typography>
       </Toolbar>
