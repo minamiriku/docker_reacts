@@ -1,6 +1,6 @@
-import Top from "../pages/Top";
-import UseState from "../pages/Hooks/useState";
-import NotFound from "../pages/NotFound";
+import Top from "pages/Top";
+import UseState from "pages/Hooks/useState";
+import NotFound from "pages/NotFound";
 
 export const ROUTE = [
   { name: "Top", exact: true, path: "/top", display: true, component: Top },

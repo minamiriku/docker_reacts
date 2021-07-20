@@ -15,9 +15,10 @@ import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Link from "@material-ui/core/Link";
-import Header from "../Header";
-import { NavList } from "../../route/NavList";
-import Logo from "../../images/logo.svg";
+import Header from "components/Header";
+import { NavList } from "route/NavList";
+import Logo from "images/logo.svg";
+import { COLOR_DEFINITIONS } from "utils/color";
 
 const drawerWidth = 240;
 
@@ -28,8 +29,8 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
     },
     appBarShift: {
-      color: "#61dafb",
-      backgroundColor: "#282c34",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
+      backgroundColor: COLOR_DEFINITIONS.MAIN.SECONDARY,
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
       transition: theme.transitions.create(["margin", "width"], {
@@ -42,8 +43,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexShrink: 0,
     },
     drawerPaper: {
-      color: "#61dafb",
-      backgroundColor: "#282c34",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
+      backgroundColor: COLOR_DEFINITIONS.MAIN.SECONDARY,
       width: drawerWidth,
     },
     drawerHeader: {
@@ -55,10 +56,10 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "flex-end",
     },
     iconButton: {
-      color: "#61dafb",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
     },
     divider: {
-      backgroundColor: "#61dafb",
+      backgroundColor: COLOR_DEFINITIONS.MAIN.PRIMARY,
     },
     content: {
       flexGrow: 1,
@@ -77,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 0,
     },
     link: {
-      color: "#61dafb",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
       width: "100%",
     },
     logo: {
