@@ -1,25 +1,74 @@
-import React from "react";
-import clsx from "clsx";
-import {
-  makeStyles,
-  useTheme,
-  Theme,
-  createStyles,
-} from "@material-ui/core/styles";
+import { useState, Fragment } from "react";
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import BaseContents from "components/BaseContents";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Link from "@material-ui/core/Link";
+import Collapse from "@material-ui/core/Collapse";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import StarBorder from "@material-ui/icons/StarBorder";
+import { NavList } from "route/NavList";
+import Logo from "images/logo.svg";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      display: "flex",
-      justifyContent: "center",
+      width: "240px",
+      maxWidth: 360,
+    },
+    nested: {
+      paddingLeft: theme.spacing(4),
+    },
+    logo: {
+      width: "30px",
     },
   })
 );
 
 const Top = () => {
   const classes = useStyles();
+  const [open, setOpen] = useState(true);
 
-  return <div className={classes.root}>top</div>;
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
+  return (
+    <BaseContents title="Top">
+      <List
+        component="nav"
+        aria-labelledby="nested-list-subheader"
+        className={classes.root}
+      >
+        {NavList.map((nav, i) => (
+          <Fragment key={i}>
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
+                <img src={Logo} alt="react" className={classes.logo} />
+              </ListItemIcon>
+              <ListItemText primary={nav.title} />
+              {open ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            {nav.navList.map((list, j) => (
+              <Collapse key={j} in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>
+                      <StarBorder />
+                    </ListItemIcon>
+                    <Link href={list.path}>{list.name}</Link>
+                  </ListItem>
+                </List>
+              </Collapse>
+            ))}
+          </Fragment>
+        ))}
+      </List>
+    </BaseContents>
+  );
 };
 
 export default Top;

@@ -1,7 +1,7 @@
 import React from "react";
 
 const UseState = () => {
-  return <div>useState</div>;
+  return <div>useStateです</div>;
 };
 
 export default UseState;
