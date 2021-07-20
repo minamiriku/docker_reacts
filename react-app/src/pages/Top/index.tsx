@@ -12,18 +12,25 @@ import ExpandMore from "@material-ui/icons/ExpandMore";
 import StarBorder from "@material-ui/icons/StarBorder";
 import { NavList } from "route/NavList";
 import Logo from "images/logo.svg";
+import { COLOR_DEFINITIONS } from "utils/color";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "240px",
       maxWidth: 360,
+      backgroundColor: COLOR_DEFINITIONS.MAIN.WHITE,
+      color: COLOR_DEFINITIONS.MAIN.SECONDARY,
+      borderRadius: "10px",
     },
     nested: {
       paddingLeft: theme.spacing(4),
     },
     logo: {
       width: "30px",
+    },
+    link: {
+      color: COLOR_DEFINITIONS.MAIN.SECONDARY,
     },
   })
 );
@@ -59,7 +66,9 @@ const Top = () => {
                     <ListItemIcon>
                       <StarBorder />
                     </ListItemIcon>
-                    <Link href={list.path}>{list.name}</Link>
+                    <Link href={list.path} className={classes.link}>
+                      {list.name}
+                    </Link>
                   </ListItem>
                 </List>
               </Collapse>

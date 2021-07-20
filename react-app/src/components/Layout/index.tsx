@@ -87,6 +87,9 @@ const useStyles = makeStyles((theme: Theme) =>
     main: {
       paddingTop: "64px",
     },
+    heading: {
+      padding: "0 20px",
+    },
   })
 );
 
@@ -132,7 +135,7 @@ const Layout: FC<LayoutType> = ({ children }) => {
         <Divider className={classes.divider} />
         {NavList.map((nav, i) => (
           <Fragment key={i}>
-            <Typography key={i} variant="h6" noWrap>
+            <Typography key={i} variant="h6" noWrap className={classes.heading}>
               {nav.title}
             </Typography>
             <List>

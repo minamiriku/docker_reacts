@@ -9,11 +9,11 @@ type LayoutType = {
 
 const BaseContents: React.FC<LayoutType> = ({ title, children }) => {
   return (
-    <Box>
+    <Box p={5}>
       <Typography variant="h2" noWrap>
         {title}
       </Typography>
-      {children}
+      <Box p={2.5}>{children}</Box>
     </Box>
   );
 };
