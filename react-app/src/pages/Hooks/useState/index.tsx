@@ -1,6 +1,10 @@
-import React from "react";
 import BaseContents from "components/BaseContents";
 import { PAGE_DESCRIPTION } from "utils/page";
+
+import Switches from "./Switch";
+import Sliders from "./Slider";
+
+const Components = [Switches, Sliders];
 
 const UseState = () => {
   const title = "useState";
@@ -8,7 +12,9 @@ const UseState = () => {
 
   return (
     <BaseContents title={title} descriptions={displayPage?.description}>
-      useStateです
+      {Components.map((Component, index) => (
+        <Component key={index} />
+      ))}
     </BaseContents>
   );
 };

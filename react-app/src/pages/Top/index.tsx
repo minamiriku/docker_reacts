@@ -44,7 +44,7 @@ const Top = () => {
   };
 
   return (
-    <BaseContents title="Top">
+    <BaseContents title="メニュー">
       <List
         component="nav"
         aria-labelledby="nested-list-subheader"
