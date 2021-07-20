@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "20px",
     },
     description: {
+      display: "block",
       fontSize: "16px",
       lineHeight: "1.5",
     },
@@ -40,10 +41,10 @@ const BaseContents: React.FC<LayoutType> = ({
               説明
             </Typography>
             <Typography variant="body1" noWrap className={classes.descriptions}>
-              {descriptions.map((desc) => (
-                <Typography variant="body2" className={classes.description}>
+              {descriptions.map((desc, index) => (
+                <span key={index} className={classes.description}>
                   {desc}
-                </Typography>
+                </span>
               ))}
             </Typography>
           </Box>
