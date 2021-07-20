@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c "cd react-app && yarn start"
+    ports:
+      - '5555:5555'
+    volumes:
+      - ./:/usr/src/app
+    stdin_open: true
