@@ -1,11 +1,11 @@
-import { FC, Fragment } from "react";
+import { FC, Fragment, useState } from "react";
 import {
   makeStyles,
   useTheme,
   Theme,
   createStyles,
 } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 import Drawer from "@material-ui/core/Drawer";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -17,6 +17,12 @@ import Link from "@material-ui/core/Link";
 import { NavList } from "route/NavList";
 import Logo from "images/logo.svg";
 import { COLOR_DEFINITIONS } from "utils/color";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Collapse from "@material-ui/core/Collapse";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import StarBorder from "@material-ui/icons/StarBorder";
 
 const drawerWidth = 240;
 
@@ -54,15 +60,23 @@ const useStyles = makeStyles((theme: Theme) =>
       }),
       marginLeft: -drawerWidth,
     },
+    nested: {
+      paddingLeft: theme.spacing(4),
+    },
     link: {
-      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
+      display: "flex",
+      alignItems: "center",
       width: "100%",
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
     },
     logo: {
       width: "30px",
     },
     heading: {
       padding: "0 20px",
+    },
+    star: {
+      color: COLOR_DEFINITIONS.MAIN.PRIMARY,
     },
   })
 );
@@ -75,6 +89,11 @@ type SideBarType = {
 const SideBar: FC<SideBarType> = ({ open, handleDrawerClose }) => {
   const classes = useStyles();
   const theme = useTheme();
+  const [isExpand, setIsExpand] = useState(true);
+
+  const handleClick = () => {
+    setIsExpand(!isExpand);
+  };
 
   return (
     <Drawer
@@ -96,28 +115,33 @@ const SideBar: FC<SideBarType> = ({ open, handleDrawerClose }) => {
         </IconButton>
       </div>
       <Divider className={classes.divider} />
-      {NavList.map((nav, i) => (
-        <Fragment key={i}>
-          <Typography key={i} variant="h6" noWrap className={classes.heading}>
-            {nav.title}
-          </Typography>
-          <List>
-            {nav.navList.map((list, j) => (
-              <ListItem button key={j}>
+      <List component="nav" aria-labelledby="nested-list-subheader">
+        {NavList.map((nav, i) => (
+          <Fragment key={i}>
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon>
                 <img src={Logo} alt="react" className={classes.logo} />
-                <Link
-                  href={list.path}
-                  underline="none"
-                  className={classes.link}
-                >
-                  {list.name}
-                </Link>
-              </ListItem>
+              </ListItemIcon>
+              <ListItemText primary={nav.title} />
+              {isExpand ? <ExpandLess /> : <ExpandMore />}
+            </ListItem>
+            {nav.navList.map((list, j) => (
+              <Collapse key={j} in={isExpand} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <Link href={list.path} className={classes.link}>
+                      <ListItemIcon>
+                        <StarBorder className={classes.star} />
+                      </ListItemIcon>
+                      <Box component="span">{list.name}</Box>
+                    </Link>
+                  </ListItem>
+                </List>
+              </Collapse>
             ))}
-          </List>
-          <Divider className={classes.divider} />
-        </Fragment>
-      ))}
+          </Fragment>
+        ))}
+      </List>
     </Drawer>
   );
 };
