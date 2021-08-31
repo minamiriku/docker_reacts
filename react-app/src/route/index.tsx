@@ -1,6 +1,7 @@
 import Top from "pages/Top";
 import UseState from "pages/Hooks/useState";
 import UseEffect from "pages/Hooks/useEffect";
+import UseContext from "pages/Hooks/useContext";
 import NotFound from "pages/NotFound";
 
 export const ROUTE = [
@@ -18,6 +19,13 @@ export const ROUTE = [
     path: "/useEffect",
     display: true,
     component: UseEffect,
+  },
+  {
+    name: "useContext",
+    exact: true,
+    path: "/useContext",
+    display: true,
+    component: UseContext,
   },
   {
     name: "NotFound",
