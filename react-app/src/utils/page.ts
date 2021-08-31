@@ -20,6 +20,12 @@ export const PAGE_DESCRIPTION = [
   },
   {
     title: "useContext",
-    description: ["これから書く"],
+    description: [
+      "propsを利用することなく下の階層のコンポーネントとデータの共有を行うことができるHooks。",
+      "コンテクストオブジェクト（React.createContext からの戻り値）を受け取り、そのコンテクストの現在値を返す。",
+      "コンテクストの現在値は、ツリー内でこのHooksを呼んだコンポーネントの直近にある <MyContext.Provider> の value の値によって決定される。",
+      "直近の <MyContext.Provider> が更新された場合、このHooksはその MyContext プロバイダに渡された最新の value の値を使って再レンダーを発生させる。",
+      "祖先コンポーネントが React.memo や shouldComponentUpdate を使っている場合でも、useContext を使っているコンポーネント自体から再レンダーが発生する。",
+    ],
   },
 ];
