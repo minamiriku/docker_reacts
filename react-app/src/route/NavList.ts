@@ -11,6 +11,7 @@ export const NavList = [
       { name: "useRef", path: "/useRef" },
       { name: "useImperativeHandle", path: "/useImperativeHandle" },
       { name: "useDebugValue", path: "/useDebugValue" },
+      { name: "Redux", path: "/redux" },
     ],
   },
 ];
