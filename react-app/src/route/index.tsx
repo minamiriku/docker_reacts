@@ -2,6 +2,7 @@ import Top from "pages/Top";
 import UseState from "pages/Hooks/useState";
 import UseEffect from "pages/Hooks/useEffect";
 import UseContext from "pages/Hooks/useContext";
+import Redux from "pages/Redux";
 import NotFound from "pages/NotFound";
 
 export const ROUTE = [
@@ -26,6 +27,13 @@ export const ROUTE = [
     path: "/useContext",
     display: true,
     component: UseContext,
+  },
+  {
+    name: "Redux",
+    exact: true,
+    path: "/redux",
+    display: true,
+    component: Redux,
   },
   {
     name: "NotFound",
