@@ -3,6 +3,7 @@ import UseState from "pages/Hooks/useState";
 import UseEffect from "pages/Hooks/useEffect";
 import UseContext from "pages/Hooks/useContext";
 import Redux from "pages/Redux";
+import Recoil from "pages/Recoil";
 import NotFound from "pages/NotFound";
 
 export const ROUTE = [
@@ -34,6 +35,13 @@ export const ROUTE = [
     path: "/redux",
     display: true,
     component: Redux,
+  },
+  {
+    name: "Recoil",
+    exact: true,
+    path: "/recoil",
+    display: true,
+    component: Recoil,
   },
   {
     name: "NotFound",
