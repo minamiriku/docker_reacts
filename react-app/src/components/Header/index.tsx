@@ -76,7 +76,7 @@ const Header: React.FC<HeaderType> = ({ open, handleDrawerOpen }) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          <Link href="/top" underline="none" className={classes.link}>
+          <Link href="/" underline="none" className={classes.link}>
             React
             <img src={Logo} alt="react" className={classes.headerLogo} />
           </Link>

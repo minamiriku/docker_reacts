@@ -7,7 +7,7 @@ import Recoil from "pages/Recoil";
 import NotFound from "pages/NotFound";
 
 export const ROUTE = [
-  { name: "Top", exact: true, path: "/top", display: true, component: Top },
+  { name: "Top", exact: true, path: "/", display: true, component: Top },
   {
     name: "useState",
     exact: true,
