@@ -1,9 +1,8 @@
 {
-  "dependencies": {
-    "clsx": "^1.1.1",
-    "react-syntax-highlighter": "^15.4.3"
-  },
-  "devDependencies": {
-    "@types/react-syntax-highlighter": "^13.5.2"
+  "scripts": {
+    "start": "cd react-app && PORT=5555 yarn start",
+    "build": "cd react-app && yarn build",
+    "test": "cd react-app && yarn test",
+    "eject": "cd react-app && yarn eject"
   }
 }
