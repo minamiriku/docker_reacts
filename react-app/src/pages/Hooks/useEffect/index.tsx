@@ -1,13 +1,13 @@
 import BaseContents from "components/BaseContents";
 import { PAGE_DESCRIPTION } from "utils/page";
 
-import Switches from "./Switch";
-import Sliders from "./Slider";
+import Timer from "./Timer";
+import Render from "./Render";
 
-const UseState = () => {
-  const title = "useState";
+const UseEffect = () => {
+  const title = "useEffect";
   const displayPage = PAGE_DESCRIPTION.find((page) => page.title === title);
-  const Components = [Switches, Sliders];
+  const Components = [Render, Timer];
 
   return (
     <BaseContents title={title} descriptions={displayPage?.description}>
@@ -18,4 +18,4 @@ const UseState = () => {
   );
 };
 
-export default UseState;
+export default UseEffect;
