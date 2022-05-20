@@ -4,6 +4,7 @@ import UseEffect from "pages/Hooks/useEffect";
 import UseContext from "pages/Hooks/useContext";
 import Redux from "pages/Redux";
 import Recoil from "pages/Recoil";
+import ReactHookForm from "pages/ReactHookForm";
 import NotFound from "pages/NotFound";
 
 export const ROUTE = [
@@ -42,6 +43,13 @@ export const ROUTE = [
     path: "/recoil",
     display: true,
     component: Recoil,
+  },
+  {
+    name: "React-Hook-Form",
+    exact: true,
+    path: "/reactHookForm",
+    display: true,
+    component: ReactHookForm,
   },
   {
     name: "NotFound",

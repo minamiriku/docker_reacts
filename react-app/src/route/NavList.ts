@@ -14,6 +14,7 @@ export const NavList = [
       // { name: "useDebugValue", path: "/useDebugValue" },
       { name: "Redux", path: "/redux" },
       { name: "Recoil", path: "/recoil" },
+      { name: "React-Hook-Form", path: "/reactHookForm" },
     ],
   },
 ];
