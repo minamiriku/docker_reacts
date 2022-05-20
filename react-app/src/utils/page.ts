@@ -28,4 +28,13 @@ export const PAGE_DESCRIPTION = [
       "祖先コンポーネントが React.memo や shouldComponentUpdate を使っている場合でも、useContext を使っているコンポーネント自体から再レンダーが発生する。",
     ],
   },
+  {
+    title: "React-Hook-Form",
+    description: [
+      "高性能で柔軟かつ拡張可能な使いやすいフォームバリデーションライブラリ。",
+      "1からフォームを作成するよりコード量を減らせる",
+      "コンポーネントの再レンダリングを分離しているため、無駄なレンダリングを抑える",
+      "入力の変更を監視できる",
+    ],
+  },
 ];

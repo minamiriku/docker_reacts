@@ -61,7 +61,7 @@ type Inputs = {
   exampleRequired: string;
 };
 
-const Form = () => {
+const BasicForm = () => {
   const {
     register,
     handleSubmit,
@@ -93,4 +93,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default BasicForm;
