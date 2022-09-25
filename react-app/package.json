@@ -52,7 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react": "^17.0.14",
+    "@types/react": "17.0.50",
     "@types/react-router-dom": "^5.1.8"
   }
 }
